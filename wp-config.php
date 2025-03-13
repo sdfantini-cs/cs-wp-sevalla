@@ -16,6 +16,8 @@
 
 // ** Database settings - You can get this info from your web host ** //
 
+if ( (!empty( $_SERVER['HTTP_X_FORWARDED_HOST'])) || (!empty( $_SERVER['HTTP_X_FORWARDED_FOR'])) ) { $_SERVER['HTTPS'] = 'on'; }
+
 // Get database settings from environment variables
 define( 'DB_NAME', getenv('WP_DB_NAME') ?: 'wordpress' );
 define( 'DB_USER', getenv('WP_DB_USER') ?: 'root' );
